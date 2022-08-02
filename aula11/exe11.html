@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgb(105, 105, 153);
+        }
+
+        .prin {
+            background-color: white;
+            height: 200px;
+            width: 90vw;
+            border-radius: 20px;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="prin">
+        <h1>Qual a sua nacionalidade?</h1>
+        Em que país nasceu <input type="text" name="pais" id="pais">
+        <input type="button" value="Verificar" onclick="clicou()">
+        <div id="res"></div>
+    </div>
+
+    <script>
+        function clicou() {
+            nasc = document.getElementById('pais')
+            pais = nasc.value
+            res = document.getElementById('res')
+            res.innerHTML = `<p>Você nasceu no <strong>${pais}</strong></p>`
+            if (pais.toLowerCase() == 'brasil') {
+                res.innerHTML += '<p>Então você é <strong>BRASILEIRO</strong></p>'
+            } else {
+                res.innerHTML += '<p>Então você é <strong>EXTRANGEIRO</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
